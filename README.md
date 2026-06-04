@@ -4,27 +4,42 @@ Site estatico para **Google Play** (campo Site) e verificacao **AdMob** (`app-ad
 
 Repositorio publico; o app Flutter permanece em `gastos_simples` (privado).
 
-## URLs apos GitHub Pages
+**Firebase:** projeto `apps-84516` · Hosting na pasta [`docs/`](docs/).
 
-Com Pages ativado em **Settings → Pages → Source: branch `main`, pasta `/docs`**:
+## URLs (Firebase Hosting)
 
 | Recurso | URL |
 |---------|-----|
-| Site | https://galvictor.github.io/julius-economias-web/ |
-| app-ads.txt | https://galvictor.github.io/julius-economias-web/app-ads.txt |
-| Privacidade | https://galvictor.github.io/julius-economias-web/privacidade.html |
+| Site | https://apps-84516.web.app/ |
+| app-ads.txt | https://apps-84516.web.app/app-ads.txt |
+| Privacidade | https://apps-84516.web.app/privacidade.html |
 
-Use a URL do site na Play Console (**Configuracoes da loja → Site**) e a mesma base na politica de privacidade.
+Alternativa: `https://apps-84516.firebaseapp.com/` (mesmo conteudo).
 
-## Ativar GitHub Pages (uma vez)
+Use **https://apps-84516.web.app** na Play Console (**Configuracoes da loja → Site**) e na politica de privacidade do app. O dominio do site na Play deve ser o mesmo onde o `app-ads.txt` esta publicado.
 
-1. GitHub → **Galvictor/julius-economias-web** → **Settings** → **Pages**
-2. **Build and deployment** → Source: **Deploy from a branch**
-3. Branch: **main**, folder: **/docs**
-4. Salvar e aguardar o deploy (1–5 min)
-5. Abrir `.../app-ads.txt` no navegador e conferir a linha do publisher
-6. AdMob → **Verificar se ha atualizacoes**
+## Publicar alteracoes
+
+Na pasta deste repositorio (com Firebase CLI instalado e `firebase login` feito):
+
+```bash
+firebase deploy --only hosting
+```
+
+## Play Console e AdMob
+
+1. Play → **Configuracoes da loja** → **Site**: `https://apps-84516.web.app`
+2. Abrir no navegador: https://apps-84516.web.app/app-ads.txt (deve mostrar a linha do publisher)
+3. AdMob → app Julius Economias → **app-ads.txt** → **Verificar se ha atualizacoes** (pode levar ate 24–48 h)
 
 ## app-ads.txt
 
-Conteudo em [`docs/app-ads.txt`](docs/app-ads.txt) (publisher AdMob da conta vinculada ao app).
+Conteudo em [`docs/app-ads.txt`](docs/app-ads.txt):
+
+```
+google.com, pub-5968219792051825, DIRECT, f08c47fec0942fa0
+```
+
+## GitHub Pages (opcional)
+
+Se preferir GitHub Pages em vez do Firebase, ative **Settings → Pages** com branch `main` e pasta `/docs`. As URLs seriam `https://galvictor.github.io/julius-economias-web/`. Nao use dois dominios diferentes na Play e no AdMob ao mesmo tempo — escolha um e mantenha consistente.
