@@ -3,53 +3,375 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Politica de privacidade — Julius Economias</title>
+    <meta
+      name="description"
+      content="Política de Privacidade do aplicativo Julius Economias para Android."
+    />
+    <title>Política de Privacidade — Julius Economias</title>
     <style>
+      :root {
+        --brand: #0f2e12;
+        --brand-light: #1a4a20;
+        --text: #1a1f1c;
+        --text-muted: #5c6560;
+        --border: #e2e8e4;
+        --surface: #f6f8f7;
+        --max-width: 42rem;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        font-family: system-ui, sans-serif;
-        max-width: 40rem;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        line-height: 1.5;
-        color: #1a1a1a;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        margin: 0;
+        color: var(--text);
+        line-height: 1.65;
+        background: #fff;
       }
-      h1 {
-        font-size: 1.35rem;
+
+      .site-header {
+        background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+        color: #fff;
+        padding: 2rem 1.25rem;
       }
+
+      .site-header__inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      .site-header a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-size: 0.875rem;
+      }
+
+      .site-header a:hover {
+        text-decoration: underline;
+      }
+
+      .site-header h1 {
+        margin: 0.75rem 0 0.25rem;
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .site-header .meta {
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      main {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      .summary {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .summary h2 {
+        margin: 0 0 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--brand);
+      }
+
+      .summary ul {
+        margin: 0;
+        padding-left: 1.25rem;
+      }
+
+      .summary li {
+        margin-bottom: 0.35rem;
+      }
+
       h2 {
-        font-size: 1.1rem;
-        margin-top: 1.5rem;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--brand);
+        margin: 2rem 0 0.75rem;
+        padding-bottom: 0.35rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 1.25rem 0 0.5rem;
+      }
+
+      p {
+        margin: 0 0 1rem;
+      }
+
+      ul {
+        margin: 0 0 1rem;
+        padding-left: 1.35rem;
+      }
+
+      li {
+        margin-bottom: 0.4rem;
+      }
+
+      a {
+        color: var(--brand-light);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      a:hover {
+        color: var(--brand);
+      }
+
+      code {
+        font-size: 0.88em;
+        background: var(--surface);
+        padding: 0.15em 0.4em;
+        border-radius: 4px;
+        border: 1px solid var(--border);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+        margin: 0 0 1rem;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 0.65rem 0.75rem;
+        border: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--surface);
+        font-weight: 600;
+      }
+
+      .site-footer {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.25rem 2.5rem;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+
+      .site-footer a {
+        font-weight: 500;
       }
     </style>
   </head>
   <body>
-    <h1>Politica de privacidade</h1>
-    <p><strong>Julius Economias</strong> (pacote <code>com.joaolopes.gastos_simples</code>)</p>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a href="index.html">← Julius Economias</a>
+        <h1>Política de Privacidade</h1>
+        <p class="meta">
+          Aplicativo Android · Pacote <code style="background:rgba(0,0,0,.2);border:none;color:#fff">com.joaolopes.gastos_simples</code>
+        </p>
+        <p class="meta">Última atualização: 4 de junho de 2026</p>
+      </div>
+    </header>
 
-    <h2>Dados que coletamos</h2>
-    <p>
-      Os lancamentos financeiros (valores, categorias, datas e notas) ficam
-      apenas no seu aparelho, em armazenamento local. Nao enviamos esses dados
-      para nossos servidores.
-    </p>
+    <main>
+      <section class="summary" aria-labelledby="resumo-titulo">
+        <h2 id="resumo-titulo">Resumo</h2>
+        <ul>
+          <li>
+            Seus lançamentos financeiros permanecem <strong>no seu aparelho</strong>;
+            não operamos servidores para armazenar seus gastos ou receitas.
+          </li>
+          <li>
+            A versão gratuita exibe <strong>anúncios do Google AdMob</strong>, que
+            pode tratar dados conforme as políticas do Google.
+          </li>
+          <li>
+            A compra <strong>Julius Premium</strong> é processada pela
+            <strong>Google Play</strong>; não recebemos dados de pagamento.
+          </li>
+        </ul>
+      </section>
 
-    <h2>Anuncios (Google AdMob)</h2>
-    <p>
-      Na versao gratuita, o app exibe anuncios pelo Google AdMob. O Google pode
-      coletar identificadores de publicidade e dados de uso conforme a politica
-      do Google:
-      <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.
-    </p>
+      <p>
+        Esta Política de Privacidade descreve como o aplicativo
+        <strong>Julius Economias</strong> (“App”, “nós” ou “nosso”) trata
+        informações no contexto do uso em dispositivos Android. Ao utilizar o
+        App, você concorda com as práticas descritas neste documento.
+      </p>
 
-    <h2>Compras no app</h2>
-    <p>
-      A compra Julius Premium e processada pela Google Play. Nao armazenamos
-      dados de cartao ou pagamento.
-    </p>
+      <h2>1. Controlador e contato</h2>
+      <p>
+        O App é oferecido por seu desenvolvedor independente. Para questões
+        sobre privacidade ou exercício de direitos:
+      </p>
+      <ul>
+        <li>
+          <strong>E-mail:</strong>
+          <a href="mailto:jlopes6@gmail.com">jlopes6@gmail.com</a>
+        </li>
+      </ul>
 
-    <h2>Contato</h2>
-    <p>E-mail: jlopes6@gmail.com</p>
+      <h2>2. Dados que tratamos</h2>
 
-    <p><a href="index.html">Voltar</a></p>
+      <h3>2.1 Dados inseridos por você (armazenamento local)</h3>
+      <p>
+        O App registra informações que você fornece voluntariamente, tais como
+        valores, categorias, datas, observações e configurações de recorrências.
+        Esses dados são gravados <strong>localmente no dispositivo</strong>
+        (armazenamento no aparelho) e <strong>não são transmitidos</strong> a
+        servidores nossos para sincronização ou backup em nuvem na versão atual.
+      </p>
+
+      <h3>2.2 Dados tratados por terceiros</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Serviço</th>
+            <th>Finalidade</th>
+            <th>Operador</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Exibição de anúncios na versão gratuita</td>
+            <td>Google LLC</td>
+          </tr>
+          <tr>
+            <td>Google Play Billing</td>
+            <td>Compra do produto <code>remove_ads</code> (Julius Premium)</td>
+            <td>Google LLC</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        O Google pode coletar identificadores de publicidade, endereço IP,
+        informações do dispositivo e eventos de interação com anúncios, conforme
+        sua própria política:
+        <a href="https://policies.google.com/privacy" rel="noopener noreferrer"
+          >Política de Privacidade do Google</a
+        >.
+      </p>
+
+      <h2>3. Finalidades do tratamento</h2>
+      <ul>
+        <li>Permitir o registro e a consulta de receitas e despesas no App;</li>
+        <li>Gerar resumos, gráficos e exportação de relatório (recurso Premium);</li>
+        <li>Exibir anúncios na versão gratuita e medir desempenho publicitário;</li>
+        <li>Processar a compra para remoção de anúncios via loja oficial;</li>
+        <li>Cumprir obrigações legais e responder a solicitações de titulares.</li>
+      </ul>
+
+      <h2>4. Base legal (LGPD)</h2>
+      <p>
+        Quando aplicável à legislação brasileira (Lei nº 13.709/2018 — LGPD),
+        o tratamento se apoia principalmente em:
+      </p>
+      <ul>
+        <li>
+          <strong>Execução de contrato</strong> — prestação das funcionalidades
+          solicitadas por você ao usar o App;
+        </li>
+        <li>
+          <strong>Legítimo interesse</strong> — segurança, melhoria do produto e
+          prevenção a fraudes, respeitados seus direitos;
+        </li>
+        <li>
+          <strong>Consentimento</strong> — quando exigido para publicidade
+          personalizada ou permissões opcionais do sistema, conforme configurações
+          do Android e da loja.
+        </li>
+      </ul>
+
+      <h2>5. Compartilhamento e transferência</h2>
+      <p>
+        Não vendemos seus lançamentos financeiros. Compartilhamento ocorre apenas
+        com provedores estritamente necessários (Google AdMob e Google Play), nos
+        termos de seus contratos e políticas. Dados processados pelo Google podem
+        ser tratados em servidores fora do Brasil, conforme as salvaguardas
+        adotadas por esse fornecedor.
+      </p>
+
+      <h2>6. Retenção e exclusão</h2>
+      <ul>
+        <li>
+          <strong>Dados locais:</strong> permanecem no aparelho até você
+          desinstalar o App, limpar dados do aplicativo ou apagar registros
+          manualmente.
+        </li>
+        <li>
+          <strong>Dados de anúncios e compras:</strong> regidos pelos prazos e
+          ferramentas de exclusão disponibilizados pelo Google (por exemplo,
+          configurações de anúncios do Android).
+        </li>
+      </ul>
+
+      <h2>7. Segurança</h2>
+      <p>
+        Adotamos boas práticas de desenvolvimento para reduzir riscos no
+        dispositivo. Nenhum método de transmissão ou armazenamento é 100%
+        seguro; recomendamos manter o sistema operacional atualizado e utilizar
+        bloqueio de tela no aparelho.
+      </p>
+
+      <h2>8. Crianças e adolescentes</h2>
+      <p>
+        O App não é direcionado a menores de 13 anos. Não coletamos
+        intencionalmente dados de crianças. Se você acredita que houve coleta
+        indevida, entre em contato para avaliação e exclusão.
+      </p>
+
+      <h2>9. Seus direitos (titular de dados)</h2>
+      <p>
+        Nos termos da LGPD, você pode solicitar, quando aplicável:
+      </p>
+      <ul>
+        <li>confirmação e acesso aos dados que tratamos diretamente;</li>
+        <li>correção de dados incompletos ou desatualizados;</li>
+        <li>eliminação de dados desnecessários ou tratados em desconformidade;</li>
+        <li>informação sobre compartilhamentos e sobre o não fornecimento de consentimento.</li>
+      </ul>
+      <p>
+        Para dados tratados apenas no dispositivo, a exclusão pode ser feita
+        diretamente no App ou nas configurações do Android. Para dados do Google,
+        utilize também os recursos da conta Google e da Play Store.
+      </p>
+
+      <h2>10. Alterações desta política</h2>
+      <p>
+        Podemos atualizar este documento para refletir mudanças no App ou na
+        legislação. A data da versão vigente consta no topo da página.
+        Alterações relevantes podem ser comunicadas por meio da loja de
+        aplicativos ou dentro do App quando apropriado.
+      </p>
+
+      <h2>11. Disposições finais</h2>
+      <p>
+        Em caso de conflito entre esta política e termos impostos pela Google
+        Play ou pelo AdMob, prevalecerão as regras do respectivo serviço na
+        medida exigida por lei. Esta política não substitui os Termos de Uso da
+        Google Play aplicáveis à distribuição do App.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Voltar à página inicial</a>
+        · Julius Economias © 2026
+      </p>
+    </footer>
   </body>
 </html>

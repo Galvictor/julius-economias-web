@@ -3,32 +3,106 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Julius Economias — controle de receitas e despesas para Android."
+    />
     <title>Julius Economias</title>
     <style>
+      :root {
+        --brand: #0f2e12;
+        --brand-light: #1a4a20;
+        --text: #1a1f1c;
+        --text-muted: #5c6560;
+        --max-width: 42rem;
+      }
+
       body {
-        font-family: system-ui, sans-serif;
-        max-width: 40rem;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        line-height: 1.5;
-        color: #1a1a1a;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        margin: 0;
+        color: var(--text);
+        line-height: 1.65;
+        background: #fff;
       }
-      h1 {
-        font-size: 1.5rem;
+
+      .site-header {
+        background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+        color: #fff;
+        padding: 2.5rem 1.25rem;
       }
-      a {
-        color: #0f2e12;
+
+      .site-header__inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      .site-header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.85rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .site-header p {
+        margin: 0;
+        opacity: 0.92;
+        max-width: 32rem;
+      }
+
+      main {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2rem 1.25rem;
+      }
+
+      .links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .links a {
+        color: var(--brand-light);
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+
+      .links a:hover {
+        border-bottom-color: var(--brand-light);
+      }
+
+      .muted {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-top: 2rem;
       }
     </style>
   </head>
   <body>
-    <h1>Julius Economias</h1>
-    <p>
-      App de controle de receitas e despesas para Android. Dados armazenados
-      localmente no dispositivo.
-    </p>
-    <p>
-      <a href="privacidade.html">Politica de privacidade</a>
-    </p>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <h1>Julius Economias</h1>
+        <p>
+          Aplicativo Android para controle de receitas e despesas. Seus dados
+          financeiros ficam no dispositivo, com privacidade em primeiro lugar.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <ul class="links">
+        <li>
+          <a href="privacidade.html">Política de Privacidade</a>
+        </li>
+      </ul>
+      <p class="muted">
+        Pacote: <code>com.joaolopes.gastos_simples</code>
+      </p>
+    </main>
   </body>
 </html>
