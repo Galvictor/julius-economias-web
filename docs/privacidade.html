@@ -182,7 +182,7 @@
         <p class="meta">
           Aplicativo Android · Pacote <code style="background:rgba(0,0,0,.2);border:none;color:#fff">com.joaolopes.gastos_simples</code>
         </p>
-        <p class="meta">Última atualização: 2 de junho de 2026 (frase de backup e conta vinculada)</p>
+        <p class="meta">Última atualização: 5 de junho de 2026 (backup por conta, sem frase)</p>
       </div>
     </header>
 
@@ -244,17 +244,15 @@
         (e-mail/senha e/ou Google) podem, por ação manual na aba <strong>Conta</strong>, enviar um
         <strong>backup criptografado</strong> ao Google Firebase (projeto
         <code>apps-84516</code>). O conteúdo financeiro é cifrado <strong>no aparelho</strong>
-        (AES-256-GCM) antes do envio, com chave derivada da sua <strong>frase de backup</strong>
-        (definida por você no app). A frase <strong>não</strong> é enviada nem armazenada por nós;
-        apenas um <strong>salt</strong> técnico (identificador aleatório) fica em metadados na nuvem
-        para permitir a mesma derivação de chave em outro aparelho.
-        O identificador de conta é tratado pelo <strong>Firebase Authentication</strong>.
+        (AES-256-GCM) antes do envio, com chave derivada do identificador da sua
+        <strong>conta Firebase</strong>. O conteúdo financeiro não fica legível no Console
+        Firebase em texto claro. O identificador de conta é tratado pelo
+        <strong>Firebase Authentication</strong>.
       </p>
       <p>
         Para <strong>restaurar</strong> o backup após reinstalar o app ou em outro aparelho,
-        é necessário entrar com a mesma conta e informar a <strong>frase de backup</strong> que você
-        definiu ao fazer o backup. Sem a frase, o conteúdo financeiro na nuvem permanece
-        ilegível (inclusive para nós no Console Firebase).
+        basta entrar com a <strong>mesma conta</strong> vinculada e usar a opção de restauração
+        na aba Conta (recurso Premium).
       </p>
 
       <h3>2.1.1 Conta vinculada (opcional)</h3>
