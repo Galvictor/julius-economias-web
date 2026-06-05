@@ -182,7 +182,7 @@
         <p class="meta">
           Aplicativo Android · Pacote <code style="background:rgba(0,0,0,.2);border:none;color:#fff">com.joaolopes.gastos_simples</code>
         </p>
-        <p class="meta">Última atualização: 2 de junho de 2026 (conta e-mail e backup Premium)</p>
+        <p class="meta">Última atualização: 2 de junho de 2026 (conta e-mail, Google e backup Premium)</p>
       </div>
     </header>
 
@@ -192,13 +192,13 @@
         <ul>
           <li>
             Seus lançamentos financeiros ficam <strong>no seu aparelho</strong> por padrão.
-            Com <strong>Julius Premium</strong> e uma <strong>conta gratuita (e-mail e senha)</strong>,
+            Com <strong>Julius Premium</strong> e uma <strong>conta gratuita (e-mail ou Google)</strong>,
             você pode fazer <strong>backup manual opcional</strong> na nuvem (Google Firebase),
             em formato <strong>criptografado</strong> — não legível por nós no Console.
           </li>
           <li>
             <strong>Conta opcional:</strong> usar o App, exportar PDF e remover anúncios (Premium)
-            não exige cadastro. Apenas o <strong>backup na nuvem</strong> exige conta com e-mail.
+            não exige cadastro. Apenas o <strong>backup na nuvem</strong> exige conta vinculada.
           </li>
           <li>
             A versão gratuita exibe <strong>anúncios do Google AdMob</strong>, que
@@ -240,14 +240,14 @@
         Na versão gratuita, <strong>não há envio</strong> desses lançamentos à nuvem.
       </p>
       <p>
-        Usuários <strong>Julius Premium</strong> com <strong>conta e-mail e senha</strong>
-        podem, por ação manual na aba <strong>Conta</strong>, enviar um
+        Usuários <strong>Julius Premium</strong> com <strong>conta vinculada</strong>
+        (e-mail/senha e/ou Google) podem, por ação manual na aba <strong>Conta</strong>, enviar um
         <strong>backup criptografado</strong> ao Google Firebase (projeto
         <code>apps-84516</code>). O conteúdo financeiro é cifrado <strong>no aparelho</strong>
         (AES-256-GCM) antes do envio; a chave de decifragem permanece no dispositivo.
-        O e-mail é tratado pelo <strong>Firebase Authentication</strong> para identificar
-        sua conta na nuvem. Se você já usou backup antes de criar conta, pode
-        <strong>vincular o e-mail</strong> à sessão existente para manter o mesmo backup.
+        O identificador de conta é tratado pelo <strong>Firebase Authentication</strong>.
+        Se você já usou backup antes de criar conta, pode
+        <strong>vincular e-mail ou Google</strong> à sessão existente para manter o mesmo backup.
       </p>
       <p>
         <strong>Limitação:</strong> em outro aparelho, entrar com o mesmo e-mail permite
@@ -255,14 +255,15 @@
         depende da chave guardada no aparelho original (recurso de frase de backup em versão futura).
       </p>
 
-      <h3>2.1.1 Conta com e-mail (opcional)</h3>
+      <h3>2.1.1 Conta vinculada (opcional)</h3>
       <p>
-        O cadastro com <strong>e-mail e senha</strong> é opcional e gratuito. Coletamos
-        apenas o e-mail fornecido por você para autenticação no Firebase. Você pode solicitar
-        <strong>redefinição de senha</strong> por e-mail (link enviado pelo Firebase).
-        Ao sair da conta, o App pode retomar uma sessão anônima técnica; o backup na nuvem
-        só fica acessível após novo login com e-mail. <strong>Não</strong> oferecemos
-        login com Google nesta versão.
+        O cadastro é opcional e gratuito. Você pode autenticar com <strong>e-mail e senha</strong>
+        ou com <strong>Google Sign-In</strong> (Firebase Auth). Coletamos o e-mail associado
+        à conta para identificação na nuvem e recuperação do backup. Com e-mail/senha, você pode
+        solicitar <strong>redefinição de senha</strong> (link enviado pelo Firebase).
+        Com Google, a senha é gerenciada pela sua conta Google.
+        É possível <strong>conectar ambos os métodos</strong> à mesma conta Julius.
+        Ao sair da conta, o backup na nuvem só fica acessível após novo login.
       </p>
 
       <h3>2.2 Dados tratados por terceiros</h3>
@@ -287,7 +288,7 @@
           </tr>
           <tr>
             <td>Google Firebase</td>
-            <td>Backup manual criptografado (Premium + conta e-mail); autenticação</td>
+            <td>Backup manual criptografado (Premium + conta); autenticação e-mail/Google</td>
             <td>Google LLC</td>
           </tr>
         </tbody>
