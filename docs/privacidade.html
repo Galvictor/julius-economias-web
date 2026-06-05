@@ -182,7 +182,7 @@
         <p class="meta">
           Aplicativo Android · Pacote <code style="background:rgba(0,0,0,.2);border:none;color:#fff">com.joaolopes.gastos_simples</code>
         </p>
-        <p class="meta">Última atualização: 4 de junho de 2026</p>
+        <p class="meta">Última atualização: 2 de junho de 2026 (conta e-mail e backup Premium)</p>
       </div>
     </header>
 
@@ -191,8 +191,14 @@
         <h2 id="resumo-titulo">Resumo</h2>
         <ul>
           <li>
-            Seus lançamentos financeiros permanecem <strong>no seu aparelho</strong>;
-            não operamos servidores para armazenar seus gastos ou receitas.
+            Seus lançamentos financeiros ficam <strong>no seu aparelho</strong> por padrão.
+            Com <strong>Julius Premium</strong> e uma <strong>conta gratuita (e-mail e senha)</strong>,
+            você pode fazer <strong>backup manual opcional</strong> na nuvem (Google Firebase),
+            em formato <strong>criptografado</strong> — não legível por nós no Console.
+          </li>
+          <li>
+            <strong>Conta opcional:</strong> usar o App, exportar PDF e remover anúncios (Premium)
+            não exige cadastro. Apenas o <strong>backup na nuvem</strong> exige conta com e-mail.
           </li>
           <li>
             A versão gratuita exibe <strong>anúncios do Google AdMob</strong>, que
@@ -226,13 +232,37 @@
 
       <h2>2. Dados que tratamos</h2>
 
-      <h3>2.1 Dados inseridos por você (armazenamento local)</h3>
+      <h3>2.1 Dados inseridos por você (armazenamento local e backup opcional)</h3>
       <p>
         O App registra informações que você fornece voluntariamente, tais como
         valores, categorias, datas, observações e configurações de recorrências.
-        Esses dados são gravados <strong>localmente no dispositivo</strong>
-        (armazenamento no aparelho) e <strong>não são transmitidos</strong> a
-        servidores nossos para sincronização ou backup em nuvem na versão atual.
+        Esses dados são gravados <strong>localmente no dispositivo</strong>.
+        Na versão gratuita, <strong>não há envio</strong> desses lançamentos à nuvem.
+      </p>
+      <p>
+        Usuários <strong>Julius Premium</strong> com <strong>conta e-mail e senha</strong>
+        podem, por ação manual na aba <strong>Conta</strong>, enviar um
+        <strong>backup criptografado</strong> ao Google Firebase (projeto
+        <code>apps-84516</code>). O conteúdo financeiro é cifrado <strong>no aparelho</strong>
+        (AES-256-GCM) antes do envio; a chave de decifragem permanece no dispositivo.
+        O e-mail é tratado pelo <strong>Firebase Authentication</strong> para identificar
+        sua conta na nuvem. Se você já usou backup antes de criar conta, pode
+        <strong>vincular o e-mail</strong> à sessão existente para manter o mesmo backup.
+      </p>
+      <p>
+        <strong>Limitação:</strong> em outro aparelho, entrar com o mesmo e-mail permite
+        baixar o backup criptografado, mas <strong>decifrar</strong> os lançamentos ainda
+        depende da chave guardada no aparelho original (recurso de frase de backup em versão futura).
+      </p>
+
+      <h3>2.1.1 Conta com e-mail (opcional)</h3>
+      <p>
+        O cadastro com <strong>e-mail e senha</strong> é opcional e gratuito. Coletamos
+        apenas o e-mail fornecido por você para autenticação no Firebase. Você pode solicitar
+        <strong>redefinição de senha</strong> por e-mail (link enviado pelo Firebase).
+        Ao sair da conta, o App pode retomar uma sessão anônima técnica; o backup na nuvem
+        só fica acessível após novo login com e-mail. <strong>Não</strong> oferecemos
+        login com Google nesta versão.
       </p>
 
       <h3>2.2 Dados tratados por terceiros</h3>
@@ -255,6 +285,11 @@
             <td>Compra do produto <code>remove_ads</code> (Julius Premium)</td>
             <td>Google LLC</td>
           </tr>
+          <tr>
+            <td>Google Firebase</td>
+            <td>Backup manual criptografado (Premium + conta e-mail); autenticação</td>
+            <td>Google LLC</td>
+          </tr>
         </tbody>
       </table>
       <p>
@@ -270,6 +305,7 @@
       <ul>
         <li>Permitir o registro e a consulta de receitas e despesas no App;</li>
         <li>Gerar resumos, gráficos e exportação de relatório (recurso Premium);</li>
+        <li>Permitir backup e restauração manual na nuvem (Premium, criptografado);</li>
         <li>Exibir anúncios na versão gratuita e medir desempenho publicitário;</li>
         <li>Processar a compra para remoção de anúncios via loja oficial;</li>
         <li>Cumprir obrigações legais e responder a solicitações de titulares.</li>
