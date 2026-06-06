@@ -182,7 +182,7 @@
         <p class="meta">
           Aplicativo Android · Pacote <code style="background:rgba(0,0,0,.2);border:none;color:#fff">com.joaolopes.gastos_simples</code>
         </p>
-        <p class="meta">Última atualização: 5 de junho de 2026 (backup por conta, sem frase)</p>
+        <p class="meta">Última atualização: 2 de junho de 2026 (importação automática por notificações)</p>
       </div>
     </header>
 
@@ -207,6 +207,11 @@
           <li>
             A compra <strong>Julius Premium</strong> é processada pela
             <strong>Google Play</strong>; não recebemos dados de pagamento.
+          </li>
+          <li>
+            Opcionalmente, você pode ativar a <strong>importação automática</strong> lendo
+            <strong>notificações financeiras</strong> no aparelho (ex.: compras, PIX).
+            O processamento é <strong>local</strong>; o texto da notificação não é enviado a servidores.
           </li>
         </ul>
       </section>
@@ -255,7 +260,24 @@
         na aba Conta (recurso Premium).
       </p>
 
-      <h3>2.1.1 Conta vinculada (opcional)</h3>
+      <h3>2.1.1 Importação automática por notificações (opcional, Android)</h3>
+      <p>
+        Se você ativar o recurso em <strong>Ajustes</strong>, o App pode ler o
+        <strong>título e o texto</strong> de notificações exibidas por outros aplicativos
+        (por exemplo, bancos e carteiras digitais), exclusivamente para sugerir lançamentos
+        de receitas e despesas. Essa leitura ocorre <strong>no seu dispositivo</strong>;
+        não enviamos o conteúdo das notificações à nuvem nem a terceiros.
+      </p>
+      <p>
+        O recurso exige permissão do sistema Android (“acesso a notificações”) e pode
+        manter um <strong>serviço em segundo plano</strong> enquanto estiver ativo.
+        Você pode desativá-lo a qualquer momento nas configurações do App.
+        Na versão gratuita, há limite semanal de importações automáticas; é possível
+        liberar pendências assistindo a um <strong>anúncio premiado</strong> (opt-in)
+        ou assinando <strong>Julius Premium</strong> (ilimitado, sem anúncios).
+      </p>
+
+      <h3>2.1.2 Conta vinculada (opcional)</h3>
       <p>
         O cadastro é opcional e gratuito. Você pode autenticar com <strong>e-mail e senha</strong>
         ou com <strong>Google Sign-In</strong> (Firebase Auth). Coletamos o e-mail associado
@@ -278,7 +300,7 @@
         <tbody>
           <tr>
             <td>Google AdMob</td>
-            <td>Exibição de anúncios na versão gratuita</td>
+            <td>Exibição de anúncios (banner, intersticial e premiado opt-in) na versão gratuita</td>
             <td>Google LLC</td>
           </tr>
           <tr>
