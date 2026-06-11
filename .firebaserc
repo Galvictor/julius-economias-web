@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "apps-84516"
-  }
+  },
+  "targets": {
+    "apps-84516": {
+      "hosting": {
+        "julius-economias": [
+          "apps-84516"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
