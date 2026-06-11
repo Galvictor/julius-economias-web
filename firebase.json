@@ -1,17 +1,36 @@
 {
-  "hosting": {
-    "public": "docs",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "headers": [
-      {
-        "source": "app-ads.txt",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/plain; charset=utf-8"
-          }
-        ]
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "julius-economias",
+      "public": "julius-economias/docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "app-ads.txt",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "mei-orcamentos",
+      "public": "mei-orcamentos/docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "app-ads.txt",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
