@@ -7,7 +7,7 @@ Cada subpasta é um app/site independente, publicado via **Firebase Hosting mult
 | Pasta | App Android | Target Firebase | URL (produção) |
 |-------|-------------|-----------------|----------------|
 | [`julius-economias/`](julius-economias/) | Julius Economias (`gastos_simples`) | `julius-economias` | https://apps-84516.web.app/ |
-| [`mei-orcamentos/`](mei-orcamentos/) | Orçamento MEI (`mei_orcamento`) | `mei-orcamentos` | *criar site no Console antes do deploy* |
+| [`mei-orcamentos/`](mei-orcamentos/) | Orçamento MEI (`mei_orcamento`) | `mei-orcamentos` | https://mei-orcamentos.web.app/ |
 
 ## URLs — Julius Economias
 
@@ -35,10 +35,18 @@ firebase deploy --only hosting:mei-orcamentos
 
 ```bash
 firebase target:apply hosting julius-economias apps-84516
-firebase target:apply hosting mei-orcamentos <site-id-mei>
+firebase target:apply hosting mei-orcamentos mei-orcamentos
 ```
 
-O site `mei-orcamentos` precisa ser criado antes no [Firebase Console](https://console.firebase.google.com) → projeto `apps-84516` → Hosting → **Adicionar outro site**.
+## URLs — MEI Orçamentos
+
+| Recurso | URL |
+|---------|-----|
+| Site | https://mei-orcamentos.web.app/ |
+| app-ads.txt | https://mei-orcamentos.web.app/app-ads.txt |
+| Privacidade | https://mei-orcamentos.web.app/privacidade.html |
+
+Alternativa: `https://mei-orcamentos.firebaseapp.com/` (mesmo conteúdo).
 
 ## Play Console e AdMob — Julius Economias
 
@@ -49,12 +57,10 @@ O site `mei-orcamentos` precisa ser criado antes no [Firebase Console](https://c
 
 ## Play Console e AdMob — MEI Orçamentos (quando publicar)
 
-1. Criar site Hosting `mei-orcamentos` no Firebase Console
-2. `firebase target:apply hosting mei-orcamentos <site-id>`
-3. Atualizar `mei-orcamentos/docs/` (privacidade completa, app-ads.txt)
-4. `firebase deploy --only hosting:mei-orcamentos`
-5. Play Console (app MEI): Site e política com a URL do novo site
-6. AdMob (app MEI): verificar `app-ads.txt` no domínio do site MEI
+1. Play → **Configurações da loja** → **Site**: `https://mei-orcamentos.web.app`
+2. Política de privacidade: `https://mei-orcamentos.web.app/privacidade.html` (completar texto em `mei-orcamentos/docs/` antes do lançamento)
+3. Abrir no navegador: https://mei-orcamentos.web.app/app-ads.txt
+4. AdMob → app MEI → **app-ads.txt** → **Verificar se há atualizações**
 
 ## app-ads.txt
 
@@ -73,5 +79,5 @@ sites-firebase/
 ├── firebase.json
 ├── .firebaserc
 ├── julius-economias/docs/   → site default apps-84516
-└── mei-orcamentos/docs/     → site mei-orcamentos (após criar no Console)
+└── mei-orcamentos/docs/     → site mei-orcamentos
 ```

@@ -7,6 +7,9 @@
       "hosting": {
         "julius-economias": [
           "apps-84516"
+        ],
+        "mei-orcamentos": [
+          "mei-orcamentos"
         ]
       }
     }
