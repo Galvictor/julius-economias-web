@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Política de Privacidade do aplicativo Julius Economias para Android."
+      content="Política de Privacidade / Privacy Policy — Julius Economias (Julius Budget Tracker) for Android."
     />
-    <title>Política de Privacidade — Julius Economias</title>
+    <title>Política de Privacidade / Privacy Policy — Julius Economias</title>
     <style>
       :root {
         --brand: #0f2e12;
@@ -172,6 +172,24 @@
       .site-footer a {
         font-weight: 500;
       }
+
+      .lang-divider {
+        border: none;
+        height: 0;
+        margin: 3.5rem 0;
+        border-top: 3px solid var(--brand);
+        opacity: 0.35;
+      }
+
+      .lang-label {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+      }
     </style>
   </head>
   <body>
@@ -187,6 +205,8 @@
     </header>
 
     <main>
+      <section lang="pt-BR" id="pt">
+      <p class="lang-label" aria-hidden="true">Português (Brasil)</p>
       <section class="summary" aria-labelledby="resumo-titulo">
         <h2 id="resumo-titulo">Resumo</h2>
         <ul>
@@ -424,11 +444,264 @@
         medida exigida por lei. Esta política não substitui os Termos de Uso da
         Google Play aplicáveis à distribuição do App.
       </p>
+      </section>
+
+      <hr class="lang-divider" aria-hidden="true" />
+
+      <section lang="en-US" id="en">
+      <p class="lang-label" aria-hidden="true">English (United States)</p>
+
+      <h1 style="font-size:1.75rem;font-weight:700;letter-spacing:-0.02em;color:var(--brand);margin:0 0 0.5rem">
+        Privacy Policy
+      </h1>
+      <p class="meta" style="font-size:0.9rem;color:var(--text-muted);margin:0 0 0.25rem">
+        Android app · Package <code>com.joaolopes.gastos_simples</code>
+      </p>
+      <p class="meta" style="font-size:0.9rem;color:var(--text-muted);margin:0 0 2rem">
+        Last updated: June 2, 2026 (automatic import from notifications)
+      </p>
+
+      <section class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Summary</h2>
+        <ul>
+          <li>
+            Your financial entries stay <strong>on your device</strong> by default.
+            With <strong>Julius Premium</strong> and a <strong>free account (email or Google)</strong>,
+            you can optionally run a <strong>manual encrypted cloud backup</strong> (Google Firebase)
+            — not readable by us in the Console.
+          </li>
+          <li>
+            <strong>Optional account:</strong> using the App, exporting PDF, and removing ads (Premium)
+            do not require sign-up. Only <strong>cloud backup</strong> requires a linked account.
+          </li>
+          <li>
+            The free version shows <strong>Google AdMob ads</strong>, which
+            may process data under Google's policies.
+          </li>
+          <li>
+            <strong>Julius Premium</strong> purchases are processed by
+            <strong>Google Play</strong>; we do not receive payment details.
+          </li>
+          <li>
+            Optionally, you can enable <strong>automatic import</strong> by reading
+            <strong>financial notifications</strong> on the device (e.g. purchases, transfers).
+            Processing is <strong>local</strong>; notification text is not sent to servers.
+          </li>
+        </ul>
+      </section>
+
+      <p>
+        This Privacy Policy describes how the
+        <strong>Julius Budget Tracker</strong> app (“App”, “we”, or “our”) handles
+        information when you use it on Android devices. By using the
+        App, you agree to the practices described in this document.
+      </p>
+
+      <h2>1. Controller and contact</h2>
+      <p>
+        The App is offered by its independent developer. For privacy questions
+        or to exercise your rights:
+      </p>
+      <ul>
+        <li>
+          <strong>Email:</strong>
+          <a href="mailto:jlopes6@gmail.com">jlopes6@gmail.com</a>
+        </li>
+      </ul>
+
+      <h2>2. Data we process</h2>
+
+      <h3>2.1 Data you enter (local storage and optional backup)</h3>
+      <p>
+        The App records information you voluntarily provide, such as
+        amounts, categories, dates, notes, and recurring payment settings.
+        This data is stored <strong>locally on your device</strong>.
+        On the free plan, there is <strong>no upload</strong> of these entries to the cloud.
+      </p>
+      <p>
+        <strong>Julius Premium</strong> users with a <strong>linked account</strong>
+        (email/password and/or Google) may, manually from the <strong>Account</strong> tab, send an
+        <strong>encrypted backup</strong> to Google Firebase (project
+        <code>apps-84516</code>). Financial content is encrypted <strong>on the device</strong>
+        (AES-256-GCM) before upload, with a key derived from your
+        <strong>Firebase account</strong> identifier. Financial content is not stored in plain text
+        in the Firebase Console. The account identifier is handled by
+        <strong>Firebase Authentication</strong>.
+      </p>
+      <p>
+        To <strong>restore</strong> a backup after reinstalling the app or on another device,
+        sign in with the <strong>same linked account</strong> and use the restore option
+        on the Account tab (Premium feature).
+      </p>
+
+      <h3>2.1.1 Automatic import from notifications (optional, Android)</h3>
+      <p>
+        If you enable the feature in <strong>Settings</strong>, the App may read the
+        <strong>title and body</strong> of notifications shown by other apps
+        (for example, banks and digital wallets), solely to suggest income and expense
+        entries. Reading happens <strong>on your device</strong>;
+        we do not send notification content to the cloud or to third parties.
+      </p>
+      <p>
+        The feature requires Android system permission (“notification access”) and may
+        keep a <strong>background service</strong> running while enabled.
+        You can turn it off at any time in the App settings.
+        On the free plan, there is a weekly limit on automatic imports; you can
+        unlock pending items by watching a <strong>rewarded ad</strong> (opt-in)
+        or subscribing to <strong>Julius Premium</strong> (unlimited, no ads).
+      </p>
+
+      <h3>2.1.2 Linked account (optional)</h3>
+      <p>
+        Sign-up is optional and free. You can authenticate with <strong>email and password</strong>
+        or <strong>Google Sign-In</strong> (Firebase Auth). We collect the email associated
+        with the account for cloud identification and backup recovery. With email/password, you can
+        request a <strong>password reset</strong> (link sent by Firebase).
+        With Google, your password is managed by your Google account.
+        You can <strong>link both methods</strong> to the same Julius account.
+        When you sign out, cloud backup is only accessible after signing in again.
+      </p>
+
+      <h3>2.2 Data processed by third parties</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Operator</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Display of ads (banner, interstitial, and opt-in rewarded) on the free plan</td>
+            <td>Google LLC</td>
+          </tr>
+          <tr>
+            <td>Google Play Billing</td>
+            <td>Purchase of <code>remove_ads</code> (Julius Premium)</td>
+            <td>Google LLC</td>
+          </tr>
+          <tr>
+            <td>Google Firebase</td>
+            <td>Manual encrypted backup (Premium + account); email/Google authentication</td>
+            <td>Google LLC</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Google may collect advertising identifiers, IP address,
+        device information, and ad interaction events, under its own policy:
+        <a href="https://policies.google.com/privacy" rel="noopener noreferrer"
+          >Google Privacy Policy</a
+        >.
+      </p>
+
+      <h2>3. Purposes of processing</h2>
+      <ul>
+        <li>Let you record and view income and expenses in the App;</li>
+        <li>Generate summaries, charts, and report export (Premium feature);</li>
+        <li>Enable manual cloud backup and restore (Premium, encrypted);</li>
+        <li>Show ads on the free plan and measure ad performance;</li>
+        <li>Process purchases to remove ads through the official store;</li>
+        <li>Meet legal obligations and respond to data subject requests.</li>
+      </ul>
+
+      <h2>4. Legal basis</h2>
+      <p>
+        Where applicable under Brazilian law (Law No. 13,709/2018 — LGPD) and other
+        privacy laws that may apply to you, processing relies mainly on:
+      </p>
+      <ul>
+        <li>
+          <strong>Performance of a contract</strong> — providing the features
+          you request when using the App;
+        </li>
+        <li>
+          <strong>Legitimate interest</strong> — security, product improvement, and
+          fraud prevention, respecting your rights;
+        </li>
+        <li>
+          <strong>Consent</strong> — when required for personalized advertising
+          or optional system permissions, per Android and store settings.
+        </li>
+      </ul>
+
+      <h2>5. Sharing and transfer</h2>
+      <p>
+        We do not sell your financial entries. Sharing occurs only
+        with providers strictly necessary (Google AdMob and Google Play), under
+        their contracts and policies. Data processed by Google may
+        be handled on servers outside your country, under safeguards
+        adopted by that provider.
+      </p>
+
+      <h2>6. Retention and deletion</h2>
+      <ul>
+        <li>
+          <strong>Local data:</strong> remains on the device until you
+          uninstall the App, clear app data, or delete records
+          manually.
+        </li>
+        <li>
+          <strong>Ad and purchase data:</strong> governed by retention periods and
+          deletion tools provided by Google (for example,
+          Android ad settings).
+        </li>
+      </ul>
+
+      <h2>7. Security</h2>
+      <p>
+        We follow development best practices to reduce risks on
+        the device. No method of transmission or storage is 100%
+        secure; we recommend keeping your operating system updated and using
+        screen lock on your device.
+      </p>
+
+      <h2>8. Children</h2>
+      <p>
+        The App is not directed at children under 13. We do not knowingly
+        collect children's data. If you believe data was collected
+        improperly, contact us for review and deletion.
+      </p>
+
+      <h2>9. Your rights</h2>
+      <p>
+        Under applicable privacy laws (including LGPD where it applies), you may request:
+      </p>
+      <ul>
+        <li>confirmation of and access to data we process directly;</li>
+        <li>correction of incomplete or outdated data;</li>
+        <li>deletion of unnecessary or unlawfully processed data;</li>
+        <li>information about sharing and about withholding consent.</li>
+      </ul>
+      <p>
+        For data stored only on the device, deletion can be done
+        directly in the App or in Android settings. For Google-processed data,
+        also use your Google account and Play Store tools.
+      </p>
+
+      <h2>10. Changes to this policy</h2>
+      <p>
+        We may update this document to reflect changes to the App or
+        applicable law. The effective date appears at the top of each language section.
+        Material changes may be communicated through the app store
+        or within the App when appropriate.
+      </p>
+
+      <h2>11. Final provisions</h2>
+      <p>
+        If this policy conflicts with terms imposed by Google
+        Play or AdMob, the rules of the respective service prevail
+        to the extent required by law. This policy does not replace Google Play
+        Terms of Use applicable to distribution of the App.
+      </p>
+      </section>
     </main>
 
     <footer class="site-footer">
       <p>
-        <a href="index.html">Voltar à página inicial</a>
+        <a href="index.html">Voltar à página inicial / Back to home</a>
         · Julius Economias © 2026
       </p>
     </footer>
