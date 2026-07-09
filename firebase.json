@@ -31,6 +31,22 @@
           ]
         }
       ]
+    },
+    {
+      "target": "synth-wave-block-rush",
+      "public": "synth-wave-block-rush/docs",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "app-ads.txt",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

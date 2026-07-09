@@ -8,6 +8,7 @@ Cada subpasta é um app/site independente, publicado via **Firebase Hosting mult
 |-------|-------------|-----------------|----------------|
 | [`julius-economias/`](julius-economias/) | Julius Economias (`gastos_simples`) | `julius-economias` | https://apps-84516.web.app/ |
 | [`mei-orcamentos/`](mei-orcamentos/) | Orçamento MEI (`mei_orcamento`) | `mei-orcamentos` | https://mei-orcamentos.web.app/ |
+| [`synth-wave-block-rush/`](synth-wave-block-rush/) | Synth Wave Block Rush (`jogo_blocos`) | `synth-wave-block-rush` | https://synth-wave-block-rush.web.app/ |
 
 ## URLs — Julius Economias
 
@@ -29,6 +30,7 @@ Na pasta deste repositório (com Firebase CLI instalado e `firebase login` feito
 # Um site por vez (recomendado)
 firebase deploy --only hosting:julius-economias
 firebase deploy --only hosting:mei-orcamentos
+firebase deploy --only hosting:synth-wave-block-rush
 ```
 
 ### Configuração inicial de targets (uma vez por máquina)
@@ -36,6 +38,7 @@ firebase deploy --only hosting:mei-orcamentos
 ```bash
 firebase target:apply hosting julius-economias apps-84516
 firebase target:apply hosting mei-orcamentos mei-orcamentos
+firebase target:apply hosting synth-wave-block-rush synth-wave-block-rush
 ```
 
 ## URLs — MEI Orçamentos
@@ -62,6 +65,23 @@ Alternativa: `https://mei-orcamentos.firebaseapp.com/` (mesmo conteúdo).
 3. Abrir no navegador: https://mei-orcamentos.web.app/app-ads.txt
 4. AdMob → app MEI → **app-ads.txt** → **Verificar se há atualizações**
 
+## URLs — Synth Wave Block Rush
+
+| Recurso | URL |
+|---------|-----|
+| Site | https://synth-wave-block-rush.web.app/ |
+| app-ads.txt | https://synth-wave-block-rush.web.app/app-ads.txt |
+| Privacidade | https://synth-wave-block-rush.web.app/privacidade.html |
+
+Alternativa: `https://synth-wave-block-rush.firebaseapp.com/` (mesmo conteúdo).
+
+## Play Console e AdMob — Synth Wave Block Rush (quando publicar)
+
+1. Play → **Configurações da loja** → **Site**: `https://synth-wave-block-rush.web.app`
+2. Política de privacidade: `https://synth-wave-block-rush.web.app/privacidade.html`
+3. Abrir no navegador: https://synth-wave-block-rush.web.app/app-ads.txt
+4. AdMob → app Synth Wave Block Rush → **app-ads.txt** → **Verificar se há atualizações**
+
 ## app-ads.txt
 
 Publisher compartilhado (conta AdMob do desenvolvedor):
@@ -79,5 +99,6 @@ sites-firebase/
 ├── firebase.json
 ├── .firebaserc
 ├── julius-economias/docs/   → site default apps-84516
-└── mei-orcamentos/docs/     → site mei-orcamentos
+├── mei-orcamentos/docs/     → site mei-orcamentos
+└── synth-wave-block-rush/docs/ → site synth-wave-block-rush
 ```

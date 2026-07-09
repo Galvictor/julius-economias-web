@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Synth Wave Block Rush — puzzle de blocos arcade synthwave para Android."
+    />
+    <title>Synth Wave Block Rush</title>
+    <style>
+      :root {
+        --brand: #1a0b2e;
+        --brand-light: #2d1b4e;
+        --accent: #00f5ff;
+        --accent-alt: #ff2bd6;
+        --text: #f4f0ff;
+        --text-muted: #b8a8d4;
+        --max-width: 42rem;
+      }
+
+      body {
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        margin: 0;
+        color: var(--text);
+        line-height: 1.65;
+        background: var(--brand);
+      }
+
+      .site-header {
+        background: linear-gradient(
+          135deg,
+          var(--brand) 0%,
+          var(--brand-light) 45%,
+          #3d1f5c 100%
+        );
+        color: #fff;
+        padding: 2.5rem 1.25rem;
+        border-bottom: 1px solid rgba(0, 245, 255, 0.25);
+        box-shadow: 0 0 40px rgba(255, 43, 214, 0.15);
+      }
+
+      .site-header__inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      .site-header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.85rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-shadow: 0 0 18px rgba(0, 245, 255, 0.35);
+      }
+
+      .site-header p {
+        margin: 0;
+        opacity: 0.92;
+        max-width: 32rem;
+        color: var(--text-muted);
+      }
+
+      main {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2rem 1.25rem;
+      }
+
+      .links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .links a {
+        color: var(--accent);
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+
+      .links a:hover {
+        border-bottom-color: var(--accent-alt);
+        color: var(--accent-alt);
+      }
+
+      .muted {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-top: 2rem;
+      }
+
+      code {
+        background: rgba(0, 245, 255, 0.08);
+        border: 1px solid rgba(0, 245, 255, 0.2);
+        border-radius: 4px;
+        padding: 0.1rem 0.35rem;
+        font-size: 0.85em;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <h1>Synth Wave Block Rush</h1>
+        <p>
+          Puzzle de blocos arcade com visual synthwave. Modos Clássico, Blitz e
+          Campanha. Jogue offline, bata seu recorde e encadeie combos neon.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <ul class="links">
+        <li>
+          <a href="privacidade.html">Política de Privacidade</a>
+        </li>
+      </ul>
+      <p class="muted">
+        Pacote: <code>com.joaolopes.jogo_blocos</code>
+      </p>
+    </main>
+  </body>
+</html>
