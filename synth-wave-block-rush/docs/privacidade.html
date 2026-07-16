@@ -117,7 +117,7 @@
           Aplicativo Android · Pacote
           <code style="background:rgba(0,0,0,.2);border:none;color:#fff">com.joaolopes.jogo_blocos</code>
         </p>
-        <p class="meta">Última atualização: 9 de julho de 2026</p>
+        <p class="meta">Última atualização: 16 de julho de 2026</p>
       </div>
     </header>
 
@@ -125,10 +125,12 @@
       <div class="summary">
         <p>
           <strong>Resumo:</strong> o Synth Wave Block Rush armazena progresso,
-          recordes e preferências no seu dispositivo. Não exige cadastro. Se
-          você usar a versão gratuita, anúncios do Google AdMob podem coletar
-          dados conforme a política do Google. Compras na loja são processadas
-          pela Google Play.
+          recordes e preferências no seu dispositivo. Para o ranking global e
+          estatísticas de partida, o app usa login anônimo do
+          <strong>Google Firebase</strong> (sem e-mail nem senha) e envia
+          pontuações e dados agregados de jogo. Não exige cadastro com conta
+          pessoal. A versão gratuita pode exibir anúncios do Google AdMob.
+          Compras na loja são processadas pela Google Play.
         </p>
       </div>
 
@@ -141,10 +143,15 @@
       </p>
 
       <h2>2. Dados armazenados no dispositivo</h2>
-      <p>O app salva localmente, sem enviar para nossos servidores:</p>
+      <p>
+        O app salva localmente no aparelho (armazenamento interno do aplicativo),
+        sem obrigatoriedade de conta:
+      </p>
       <ul>
-        <li>recordes de pontuação e progresso nos modos de jogo;</li>
-        <li>preferências (áudio, tema visual, ajustes);</li>
+        <li>recordes de pontuação e melhores resultados por período (dia, semana, mês, ano);</li>
+        <li>progresso nos modos de jogo e preferências (áudio, tema visual, ajustes);</li>
+        <li>apelido opcional escolhido para exibição no ranking global;</li>
+        <li>fila temporária de estatísticas de partida aguardando envio quando houver conexão;</li>
         <li>status de compras locais (por exemplo, remoção de anúncios).</li>
       </ul>
       <p>
@@ -152,7 +159,61 @@
         app ou limpando os dados do aplicativo nas configurações do Android.
       </p>
 
-      <h2>3. Anúncios (Google AdMob)</h2>
+      <h2>3. Dados na nuvem (Google Firebase)</h2>
+      <p>
+        Para oferecer o <strong>ranking global</strong> e registrar
+        <strong>estatísticas de partida</strong>, o app se conecta aos serviços
+        <strong>Google Firebase</strong> (Authentication e Cloud Firestore),
+        operados pelo Google LLC. Não é necessário criar conta com e-mail ou
+        senha: o app usa um <strong>identificador anônimo</strong> gerado pelo
+        Firebase na primeira utilização dessas funções.
+      </p>
+      <p>Dados que podem ser enviados ao Firebase:</p>
+      <ul>
+        <li>
+          <strong>Ranking global:</strong> identificador anônimo do jogador,
+          apelido exibido (se definido), melhor pontuação por modo de jogo
+          (Arcade, Blitz, Synth Fall) e data da última atualização;
+        </li>
+        <li>
+          <strong>Estatísticas de partida:</strong> identificador anônimo,
+          apelido (se definido), modo de jogo, pontuação, se a partida terminou
+          em game over ou foi encerrada antes, movimentos, combos, acertos
+          perfeitos, linhas limpas, duração da sessão, nível (no modo Synth Fall,
+          quando aplicável), versão do aplicativo e horário de término;
+        </li>
+        <li>
+          dados técnicos mínimos necessários para autenticação e operação do
+          serviço (por exemplo, tokens de sessão anônima).
+        </li>
+      </ul>
+      <p>
+        <strong>Finalidade:</strong> exibir o ranking global entre jogadores,
+        manter o melhor score online por modo e analisar o desempenho agregado
+        nas partidas para melhorar o jogo. Não vendemos esses dados.
+      </p>
+      <p>
+        O envio ocorre quando você joga com conexão à internet (ou quando uma
+        partida salva localmente na fila é sincronizada após voltar online).
+        O modo Campanha não participa do ranking global nem do envio de
+        estatísticas de partida.
+      </p>
+      <p>
+        O tratamento na nuvem segue também a
+        <a
+          href="https://policies.google.com/privacy"
+          rel="noopener noreferrer"
+          >Política de Privacidade do Google</a
+        >
+        e os
+        <a
+          href="https://firebase.google.com/support/privacy"
+          rel="noopener noreferrer"
+          >termos de privacidade do Firebase</a
+        >.
+      </p>
+
+      <h2>4. Anúncios (Google AdMob)</h2>
       <p>
         A versão gratuita pode exibir anúncios via
         <strong>Google AdMob</strong>. O Google e seus parceiros podem usar
@@ -170,21 +231,32 @@
         disponível.
       </p>
 
-      <h2>4. Compras na Google Play</h2>
+      <h2>5. Compras na Google Play</h2>
       <p>
         Compras in-app (como remover anúncios) são processadas pela
         <strong>Google Play</strong>. Não recebemos dados de cartão de crédito;
         a Google trata o pagamento conforme sua própria política de privacidade.
       </p>
 
-      <h2>5. Crianças</h2>
+      <h2>6. Retenção e exclusão</h2>
+      <p>
+        Dados no dispositivo são removidos ao desinstalar o app ou limpar seus
+        dados nas configurações do Android. Dados já enviados ao Firebase
+        permanecem nos servidores do Google até exclusão conforme políticas do
+        Firebase e solicitações enviadas ao contato abaixo. O identificador
+        anônimo pode ser perdido ao desinstalar o app ou limpar dados, o que
+        impede associar novas partidas ao mesmo perfil anterior.
+      </p>
+
+      <h2>7. Crianças</h2>
       <p>
         O app é um jogo casual e não coleta intencionalmente dados pessoais de
         crianças. Pais ou responsáveis podem entrar em contato pelo e-mail acima
-        para solicitar esclarecimentos.
+        para solicitar esclarecimentos ou exclusão de dados na nuvem, quando
+        aplicável.
       </p>
 
-      <h2>6. Alterações</h2>
+      <h2>8. Alterações</h2>
       <p>
         Podemos atualizar esta política. A data da última revisão aparece no
         topo da página. O uso continuado do app após alterações constitui
@@ -194,9 +266,9 @@
         >.
       </p>
 
-      <h2>7. Contato</h2>
+      <h2>9. Contato</h2>
       <p>
-        Dúvidas sobre privacidade:
+        Dúvidas sobre privacidade ou pedidos relacionados aos seus dados:
         <a href="mailto:jlopes6@gmail.com">jlopes6@gmail.com</a>.
       </p>
     </main>
