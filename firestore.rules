@@ -7,18 +7,53 @@ service cloud.firestore {
         && request.auth.uid == userId;
     }
 
-    // Synth Wave Block Rush — ranking all-time por modo
-    match /leaderboards/{mode}/entries/{uid} {
+    // Synth Wave Block Rush — nicknames únicos (playerId = device hash)
+    match /leaderboard_nicks/{nickKey} {
       allow read: if request.auth != null;
 
       allow create: if request.auth != null
-        && request.auth.uid == uid
-        && _validLeaderboardEntry(request.resource.data);
+        && _validNickClaim(request.resource.data)
+        && request.resource.data.keys().hasOnly([
+             'displayName', 'playerId', 'updatedAt'
+           ]);
 
       allow update: if request.auth != null
-        && request.auth.uid == uid
+        && resource.data.playerId == request.resource.data.playerId
+        && _validNickClaim(request.resource.data)
+        && request.resource.data.keys().hasOnly([
+             'displayName', 'playerId', 'updatedAt'
+           ]);
+
+      // Libera nick ao trocar. Claims `legacy: true` só via Admin / script.
+      allow delete: if request.auth != null
+        && resource.data.playerId is string
+        && resource.data.playerId.size() >= 16
+        && !(_isLegacyNick(resource.data));
+    }
+
+    // Synth Wave Block Rush — ranking all-time por modo (doc id = playerId)
+    match /leaderboards/{mode}/entries/{playerId} {
+      allow read: if request.auth != null;
+
+      allow create: if request.auth != null
+        && mode in ['classic', 'blitz', 'tetris']
+        && request.resource.data.playerId == playerId
         && _validLeaderboardEntry(request.resource.data)
-        && request.resource.data.score >= resource.data.score;
+        && _nickOwnedByPlayer(
+             request.resource.data.displayNameKey,
+             playerId
+           );
+
+      allow update: if request.auth != null
+        && mode in ['classic', 'blitz', 'tetris']
+        && resource.data.playerId == playerId
+        && request.resource.data.playerId == playerId
+        && _validLeaderboardEntry(request.resource.data)
+        && request.resource.data.score >= resource.data.score
+        && _nickOwnedByPlayer(
+             request.resource.data.displayNameKey,
+             playerId
+           );
 
       allow delete: if false;
     }
@@ -34,11 +69,42 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    function _isLegacyNick(data) {
+      return 'legacy' in data && data.legacy == true;
+    }
+
+    function _validNickClaim(data) {
+      return data.displayName is string
+        && data.displayName.size() > 0
+        && data.displayName.size() <= 24
+        && data.playerId is string
+        && data.playerId.size() >= 16
+        && data.playerId.size() <= 128
+        && data.updatedAt is timestamp;
+    }
+
+    function _nickOwnedByPlayer(displayNameKey, playerId) {
+      return displayNameKey is string
+        && displayNameKey.size() > 0
+        && displayNameKey.size() <= 24
+        && exists(/databases/$(database)/documents/leaderboard_nicks/$(displayNameKey))
+        && get(/databases/$(database)/documents/leaderboard_nicks/$(displayNameKey))
+              .data.playerId == playerId;
+    }
+
     function _validLeaderboardEntry(data) {
-      return data.keys().hasOnly(['displayName', 'score', 'updatedAt'])
+      return data.keys().hasOnly([
+          'displayName', 'displayNameKey', 'score', 'updatedAt', 'playerId'
+        ])
         && data.displayName is string
         && data.displayName.size() > 0
         && data.displayName.size() <= 24
+        && data.displayNameKey is string
+        && data.displayNameKey.size() > 0
+        && data.displayNameKey.size() <= 24
+        && data.playerId is string
+        && data.playerId.size() >= 16
+        && data.playerId.size() <= 128
         && data.score is int
         && data.score >= 0
         && data.updatedAt is timestamp;
