@@ -17,14 +17,18 @@ service cloud.firestore {
              'displayName', 'playerId', 'updatedAt'
            ]);
 
+      // Dono atualiza o próprio claim, OU qualquer auth reclaims claim legacy
+      // (migração UID anônimo → deviceId; remove o campo legacy no write).
       allow update: if request.auth != null
-        && resource.data.playerId == request.resource.data.playerId
         && _validNickClaim(request.resource.data)
         && request.resource.data.keys().hasOnly([
              'displayName', 'playerId', 'updatedAt'
-           ]);
+           ])
+        && (
+          resource.data.playerId == request.resource.data.playerId
+          || _isLegacyNick(resource.data)
+        );
 
-      // Libera nick ao trocar. Claims `legacy: true` só via Admin / script.
       allow delete: if request.auth != null
         && resource.data.playerId is string
         && resource.data.playerId.size() >= 16
@@ -46,16 +50,34 @@ service cloud.firestore {
 
       allow update: if request.auth != null
         && mode in ['classic', 'blitz', 'tetris']
-        && resource.data.playerId == playerId
-        && request.resource.data.playerId == playerId
         && _validLeaderboardEntry(request.resource.data)
         && request.resource.data.score >= resource.data.score
-        && _nickOwnedByPlayer(
-             request.resource.data.displayNameKey,
-             playerId
-           );
+        && (
+          // Entry moderno (tem playerId)
+          (
+            'playerId' in resource.data
+            && resource.data.playerId == playerId
+            && request.resource.data.playerId == playerId
+            && _nickOwnedByPlayer(
+                 request.resource.data.displayNameKey,
+                 playerId
+               )
+          )
+          // Entry legado (só displayName/score/updatedAt): dono do nick pode
+          // sobrescrever ao migrar para o formato novo no mesmo doc id.
+          || (
+            !('playerId' in resource.data)
+            && request.resource.data.playerId == playerId
+            && _nickOwnedByPlayer(
+                 request.resource.data.displayNameKey,
+                 playerId
+               )
+          )
+        );
 
-      allow delete: if false;
+      // Apaga entries legados (sem playerId) após migrar score para o deviceId.
+      allow delete: if request.auth != null
+        && !('playerId' in resource.data);
     }
 
     // Synth Wave Block Rush — resumo de partidas (stats)
