@@ -9,8 +9,9 @@ service cloud.firestore {
 
     // Synth Wave Block Rush — meta do jogador (limite de renomes)
     match /players/{playerId} {
+      // resource == null: get de doc inexistente (necessário na 1ª claim).
       allow read: if request.auth != null
-        && resource.data.playerId == playerId;
+        && (resource == null || resource.data.playerId == playerId);
 
       allow create: if request.auth != null
         && request.resource.data.playerId == playerId
@@ -41,8 +42,8 @@ service cloud.firestore {
              'displayName', 'playerId', 'updatedAt'
            ]);
 
-      // Dono atualiza o próprio claim, OU qualquer auth reclaims claim legacy
-      // (migração UID anônimo → deviceId; remove o campo legacy no write).
+      // Dono atualiza o próprio claim, OU reclaim de nick legado
+      // (flag legacy ou playerId Auth antigo ≠ device hash 64 hex).
       allow update: if request.auth != null
         && _validNickClaim(request.resource.data)
         && nickKey == _normalizeNickKey(request.resource.data.displayName)
@@ -52,6 +53,7 @@ service cloud.firestore {
         && (
           resource.data.playerId == request.resource.data.playerId
           || _isLegacyNick(resource.data)
+          || _isAuthStylePlayerId(resource.data.playerId)
         );
 
       allow delete: if request.auth != null
@@ -118,6 +120,19 @@ service cloud.firestore {
 
     function _isLegacyNick(data) {
       return 'legacy' in data && data.legacy == true;
+    }
+
+    // Device hash = SHA-256 hex (64). UID Auth anônimo costuma ter ~28 chars.
+    function _isDevicePlayerId(playerId) {
+      return playerId is string
+        && playerId.size() == 64
+        && playerId.matches('^[0-9a-fA-F]+$');
+    }
+
+    function _isAuthStylePlayerId(playerId) {
+      return playerId is string
+        && playerId.size() > 0
+        && !_isDevicePlayerId(playerId);
     }
 
     function _normalizeNickKey(displayName) {
